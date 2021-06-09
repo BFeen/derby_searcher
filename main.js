@@ -10,6 +10,7 @@ Apify.main(async () => {
   const crawler = new Apify.CheerioCrawler({
     requestQueue,
     maxRequestsPerCrawl: 10,
+    maxConcurrency: 1,
     handlePageFunction: async (context) => {
       const { request, $ } = context;
       const { url, userData: { label } } = request;
